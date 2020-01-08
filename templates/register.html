@@ -1,0 +1,65 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/css/register.css">
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+{% endblock %}
+
+{% block body %}
+<!-- HEADER -->
+<header class="section">
+    <div class="container">
+
+        <div class="menu-group">
+            <div class="logo">
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<!-- VISUAL -->
+<section class="section section--visual">
+    <div class="container">
+
+        <form id="register-form" method="POST" action="/apis/v1/user/create/">
+            {% csrf_token %}
+            <ul>
+                <li>
+                    <input id="username" type="text" class="input--text" placeholder="Username" name="username">
+                </li>
+                <li>
+                    <input id="email" type="email" class="input--text" placeholder="Email" name="email">
+                </li>
+                <li>
+                    <input id="password" type="password" class="input--text" placeholder="Password" name="password">
+                </li>
+                <li>
+                    <button id="register" type="submit" class="btn btn--primary">Register</button>
+                    <!-- 자바스크립트로 alert 추후에 추가하기 -->
+                </li>
+            </ul>
+        </form>
+
+    </div>
+</section>
+{% endblock %}
+
+<!-- {% block script %}
+<script>
+    $(document).ready(function () {
+        $('#register').click(function () {
+            $.post('/apis/v1/user/create/', { 'username': $('#username').val(), 'email': $('#email').val(), 'password': $('#password').val() }, function () {
+                alert('가입을 환영합니다');
+                window.location = '/login/';
+            }).fail(function (data) {
+                alert(data.responseJSON.message);
+            });
+        });
+    });
+</script>
+{% endblock %} -->

@@ -1,0 +1,49 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/css/login.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- HEADER -->
+<header class="section">
+    <div class="container">
+
+        <div class="menu-group">
+            <div class="logo">
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<!-- VISUAL -->
+<section class="section section--visual">
+    <div class="container">
+
+        <form id="login-form" method="POST" action="/apis/v1/user/login/">
+            {% csrf_token %}
+            <ul>
+                <li>
+                    <input id="username" type="text" class="input--text" placeholder="Username" name="username">
+                </li>
+                <li>
+                    <input id="password" type="password" class="input--text" placeholder="Password" name="password">
+                </li>
+                <li>
+                    <button type="submit" class="btn btn--primary">Login</button>
+                </li>
+                <li>
+                    <a href="{% url 'register' %}" class="btn">Register here</a>
+                </li>
+            </ul>
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+/* HEADER */
+header {
+    border-bottom: 1px solid rgba(0,0,0,.75);
+    box-shadow: 0 0 5px rgba(0,0,0,.75);
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4,
+                                #c13584, #e1306c, #fd1d1d);
+}
+header .container {
+    height: 100px;
+}
+header .menu-group {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+header .menu-group .logo {
+    
+}
+header .menu-group .logo a {
+    background: url("http://www.brandgradients.com/img/logos/instagram-hex-colors-gradient-logo.png");
+    height: 70px;
+    width: 300px;
+    display: block;
+    text-indent: -9999px;
+}
+
+
+/* VISUAL */
+.section--visual {
+
+}
+.section--visual .container {
+    padding-top: 120px;
+    padding-bottom: 50px;
+    background: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#login-form {
+    border: 1px solid rgba(0,0,0,.75);
+    border-radius: 5px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
